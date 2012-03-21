@@ -1,7 +1,7 @@
 App.Views.ListProposal = Backbone.View.extend({
 	events: {
-		"click a[id^=proposals_refresh]": "refreshProposal",
-		"click a[id^=proposals_remove]": "removeProposal",
+		"click a[id^=proposals_refresh]":  "refreshProposal",
+		"click a[id^=proposals_remove]":   "removeProposal",
 		"click a[id^=proposals_unassign]": "unassignProposal"
 	},
 	initialize: function() {
@@ -37,7 +37,8 @@ App.Views.ListProposal = Backbone.View.extend({
 		//dirty way to do it, we should just update the collection instead of realoading it
 		var params = {};
 //console.log(this.options.user_id);		
-		if (this.options.user_id) params = {data: { user: this.options.user_id }};
+		if (this.options.user_id) 
+			params = {data: { user: this.options.user_id }};
 		var self = this;
 		this.collection.fetch(params);		
 	},
